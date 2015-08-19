@@ -4,7 +4,7 @@
 /* End of Config Parameters */
 
 $cuelink_redirect = "http://linksredirect.com?pub_id=7210CL6761&url=";
-$link = $_SERVER['QUERY_STRING'];
+$link = urldecode($_SERVER['QUERY_STRING']);
 $flipkart_pattern = "/flipkart.com/";
 $amazon_pattern = "/amazon.in/";
 $snapdeal_pattern = "/snapdeal.com/";
