@@ -1,17 +1,20 @@
 <?php
-/* Redirect to cuelinks and then to result site */
 /* $link  = $_GET['l']; */
+/* Config Parameters */
+/* End of Config Parameters */
+
 $cuelink_redirect = "http://linksredirect.com?pub_id=7210CL6761&url=";
 $link = $_SERVER['QUERY_STRING'];
 $flipkart_pattern = "/flipkart.com/";
 $amazon_pattern = "/amazon.in/";
+$snapdeal_pattern = "/snapdeal.com/";
 
-/* check for flipkart or amazon link. else pass it through cuelinks */
-if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $link, $match))
+/* check for flipkart, amazon, snapdeal link. else pass it through cuelinks */
+if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $link, $match) | preg_match($snapdeal_pattern, $link, $match))
 { 
-    /* dividing operation sequence for flipkart and amazon */
+    /* dividing operation sequence for flipkart -- amazon -- snapdeal */
 
-    /* following code is only for flipkart aff link converting */
+    /* **FLIPKART CONVERSION */
     if(preg_match($flipkart_pattern, $link, $match))
     {   
         /* if there is no query in link then add ?affid=alvistor
@@ -47,7 +50,7 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
         {   $link = preg_replace($fk_patternof_non_www_link, $fk_deeplink."/", $link, 1);     }       
         }
     }
-    /* following code is only for amazon aff link converting */
+    /* ** AMAZON.IN CONVERSION */
     if(preg_match($amazon_pattern, $link, $match))
     {
          /* if there is no query in link then add '?tag=alvistor-21'
@@ -69,6 +72,23 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
              /*echo $link;*/
         }
     }
+    /* ** SNAPDEAL CONVERSION */
+    if(preg_match($snapdeal_pattern, $link, $match))
+    {
+        $snapdeal_add_this_for_query_link = "&utm_source=aff_prog&utm_campaign=afts&offer_id=17&aff_id=55957";
+        $snapdeal_add_this_for_nonquery_link = "?utm_source=aff_prog&utm_campaign=afts&offer_id=17&aff_id=55957";
+        /* checking for query or non query link to append affid */
+        if(preg_match("/\?/", $link, $match))
+        {
+            $link .= $snapdeal_add_this_for_query_link;
+        }
+        else
+        {
+            $link .= $snapdeal_add_this_for_nonquery_link;
+        }
+    }
+
+    /* final Touchups for link */
 /*add http in front of any manual links*/
 if(preg_match("/http/",$link,$matches)){}else{
 $link = "http://" . $link;}
