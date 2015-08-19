@@ -1,13 +1,23 @@
 <?php
-/* $link  = $_GET['l']; */
-/* Config Parameters */
-/* End of Config Parameters */
-
+/* Author: Travis @ Sakthitharan S, alvistor.com */
+/* $$$$$$$$$$$$$$$  Config Parameters $$$$$$$$$$$$$$$$$$$$$$$ */
+#cuelinks url
 $cuelink_redirect = "http://linksredirect.com?pub_id=7210CL6761&url=";
-$link = urldecode($_SERVER['QUERY_STRING']);
+#flipkart affiliate tag id
+$flipkart_aff_id = "affid=alvistor";
+#amazon affiliate tag id
+$amazon_aff_id = "tag=alvistor-21";
+#snapdeal affiliate tag id
+$snapdeal_aff_id = "utm_source=aff_prog&utm_campaign=afts&offer_id=17&aff_id=55957";
+/* $$$$$$$$$$$$$$  End of Config Parameters $$$$$$$$$$$$$$$$$$*/
+
+/* ----------start of pgm params------------- */
 $flipkart_pattern = "/flipkart.com/";
 $amazon_pattern = "/amazon.in/";
 $snapdeal_pattern = "/snapdeal.com/";
+/* ----------end of pgm params-------------- */
+
+$link = urldecode($_SERVER['QUERY_STRING']); /* urldecode will decode html or utf-8 encoded chars to char */
 
 /* check for flipkart, amazon, snapdeal link. else pass it through cuelinks */
 if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $link, $match) | preg_match($snapdeal_pattern, $link, $match))
@@ -20,8 +30,8 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
         /* if there is no query in link then add ?affid=alvistor
            else add &affid=alvistor at end of the query */
         
-        $fk_add_this_for_query_link = "&affid=alvistor";
-        $fk_add_this_for_nonquery_link = "?affid=alvistor";
+        $fk_add_this_for_query_link = "&" . $flipkart_aff_id;
+        $fk_add_this_for_nonquery_link = "?" . $flipkart_aff_id;
         /* checking for query or non query link to append affid */
         if(preg_match("/\?/", $link, $match))
         {
@@ -56,8 +66,8 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
          /* if there is no query in link then add '?tag=alvistor-21'
            else add '&tag=alvistor-21' at end of the query */
         
-        $am_add_this_for_query_link = "&tag=alvistor-21";
-        $am_add_this_for_nonquery_link = "?tag=alvistor-21";
+        $am_add_this_for_query_link = "&" . $amazon_aff_id;
+        $am_add_this_for_nonquery_link = "?" $amazon_aff_id;
         /* checking for query or non query link to append affid */
         if(preg_match("/\?/", $link, $match))
         {
@@ -75,8 +85,8 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
     /* ** SNAPDEAL CONVERSION */
     if(preg_match($snapdeal_pattern, $link, $match))
     {
-        $snapdeal_add_this_for_query_link = "&utm_source=aff_prog&utm_campaign=afts&offer_id=17&aff_id=55957";
-        $snapdeal_add_this_for_nonquery_link = "?utm_source=aff_prog&utm_campaign=afts&offer_id=17&aff_id=55957";
+        $snapdeal_add_this_for_query_link = "&" . $snapdeal_aff_id;
+        $snapdeal_add_this_for_nonquery_link = "?" . $snapdeal_aff_id;
         /* checking for query or non query link to append affid */
         if(preg_match("/\?/", $link, $match))
         {
@@ -89,9 +99,9 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
     }
 
     /* final Touchups for link */
-/*add http in front of any manual links*/
-if(preg_match("/http/",$link,$matches)){}else{
-$link = "http://" . $link;}
+    /*add http in front of any manual links*/
+    if(preg_match("/http/",$link,$matches)) {}
+    else{$link = "http://" . $link;}
 }
 else
 { 
