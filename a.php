@@ -20,8 +20,6 @@ $snapdeal_pattern = "/snapdeal.com/";
 
 $link = urldecode($_SERVER['QUERY_STRING']); /* urldecode will decode html or utf-8 encoded chars to char */
 
-if(empty($link)) { $link = "go.e33.in"; }
-
 /* check for flipkart, amazon, snapdeal link. else pass it through cuelinks */
 if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $link, $match) | preg_match($snapdeal_pattern, $link, $match))
 {
@@ -109,7 +107,8 @@ if(preg_match($flipkart_pattern, $link, $match) | preg_match($amazon_pattern, $l
 else
 {
     /* echo "link passing through cuelinks"; */
-    $link = $cuelink_redirect . $link;
+    if(empty($link)) { $link = "http://go.e33.in"; }
+    else { $link = $cuelink_redirect . $link; }
 
 }
 /*echo $link;*/
