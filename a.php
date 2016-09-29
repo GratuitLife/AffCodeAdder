@@ -19,7 +19,8 @@ $link = urldecode($_SERVER['QUERY_STRING']); /* urldecode will decode html or ut
 
 if(empty($link)) {
 #    $link = "http://e33.in/home.php";
-include 'home.html';
+    include 'home.php';
+    exit;
 }
 
 /* check for flipkart, amazon, snapdeal link. else pass it through cuelinks */
