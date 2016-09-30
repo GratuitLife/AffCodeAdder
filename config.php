@@ -6,15 +6,15 @@
  * Time: 11:02 PM
  */
 
-$host = 'localhost';
-$username = 'alvistor_e33';
-$password = 'sakthi';
-$db = 'alvistor_e33db';
+//$host = 'localhost';
+//$username = 'alvistor_sakthi';
+//$password = 'sakthi';
+//$db = 'alvistor_e33db';
 
-//$host = 'localhost';    //
-//$username = 'root';     //alvistor_sakthi
-//$password = '';         //sakthi
-//$db = 'e33db';          //alvistor_e33db
+$host = 'localhost';    //
+$username = 'root';     //alvistor_sakthi
+$password = '';         //sakthi
+$db = 'e33db';          //alvistor_e33db
 
 $conn = mysqli_connect($host, $username, $password, $db);
 

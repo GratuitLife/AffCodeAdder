@@ -6,12 +6,25 @@ $(function(){
     // code for sideNav menu
     // Initialize collapse button
     $(".button-collapse").sideNav({
-        menuWidth: 300, // Default is 240
+        // menuWidth: 240, // Default is 240
         //edge: 'right', // Choose the horizontal origin
         //closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
     });
+
+    // to add class active
+    $(function () {
+        var pgurl = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+        $(".side-nav li a").each(function () {
+            if ($(this).attr("href") == pgurl || $(this).attr("href") == '')
+                $(this).addClass("active");
+        })
+    });
+
     // Initialize collapsible - to show/hide the links under menu
     $('.collapsible').collapsible();
+    $(document).ready(function () {
+        $('select').material_select();
+    });
     // top query button click to open top query
     $("#top-query-button").click(function () {
         $('.top-query').toggleClass('top-query-active');
@@ -24,7 +37,7 @@ $(function(){
         $(".gsc-search-button").trigger("click");
         $.post("web/search_keyword_update.php", {keyword: query})
             .done(function (data) {
-                alert(query);
+                // alert(query);
             });
     });
 });
@@ -41,7 +54,9 @@ function fixe33(){
             // alert(e33url);
             event.preventDefault();
         })
+
     });
     // var search =  document.getElementById("gsc-i-id1").value;
     // alert("search query is " + search);
+    Materialize.toast('Search Completed!', 4000);
 }

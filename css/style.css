@@ -62,6 +62,10 @@
     font-weight: 500;
     font-size: 12px;
 }
+
+.side-nav li .active {
+    background-color: var(--primary-color);
+}
 .col {
     margin-bottom: 10px;
 }

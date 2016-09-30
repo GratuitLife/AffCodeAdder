@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>e33 Home</title>
     <!-- CSS -->
     <!--<link rel="stylesheet" href="css/materialize.min.css">-->
@@ -10,10 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:500"
           rel="stylesheet">
     <!--<link rel='stylesheet' href='https://cse.google.com/style/look/default.css' type='text/css'/>-->
-    <!-- JavaScript -->
+    <!-- JavaScript for google search -->
+    <script src='//www.google.com/jsapi' type='text/javascript'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="js/materialize.min.js"></script>
-    <script src='//www.google.com/jsapi' type='text/javascript'></script>
     <script src="js/scripts.js"></script>
 </head>
 <body>
@@ -24,7 +25,7 @@
             <li><a href="#!">First Sidebar Link</a></li>
             <li><a href="#!">Second Sidebar Link</a></li>
             <li class="no-padding">
-                <ul class="collapsible collapsible-accordion">
+                <ul class="collapsible">
                     <li>
                         <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
                         <div class="collapsible-body">
@@ -208,6 +209,6 @@
         &copy; e33 Promotions - powered by alvistor
     </div>
 </div>
-</div>
+
 </body>
 </html>
