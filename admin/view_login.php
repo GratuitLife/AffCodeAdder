@@ -21,7 +21,7 @@ if ($_POST) {
                 session_start();
                 $_SESSION['user'] = $username;
                 $_SESSION['role'] = $row['role'];
-                header("Location: view_dash.php");
+                header("Location: index.php");
                 exit;
             } else {
                 $error = "<i class=\"material-icons\" style='color:red'>warning</i> wrong password";
@@ -39,7 +39,7 @@ if ($_POST) {
 <html>
 <body>
 <link rel="stylesheet" href="adminstyle.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <div class="row">

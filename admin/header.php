@@ -21,16 +21,21 @@ if (!$_SESSION['user']) {
           rel="stylesheet">
     <!--<link rel='stylesheet' href='https://cse.google.com/style/look/default.css' type='text/css'/>-->
     <!-- JavaScript for google search -->
+    <link href="../css/materialize.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <link href="adminstyle.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="../js/materialize.min.js"></script>
+    <script src="../js/datetimepicker.min.js"></script>
     <script src="../js/scripts.js"></script>
+    <link href="../css/datetimepicker.css" rel="stylesheet">
 </head>
 <body>
 <ul id="slide-out" class="side-nav">
-    <li class="center-align"><a href="index.php"><img src="../res/logo.gif" width="150px" id="logo"/></a></li>
-    <li><a href="view_dash.php">Dashboard</a></li>
+    <li class="center-align"><img src="../res/logo.gif" width="150px" id="logo"/></li>
+    <li><a href="index.php">Dashboard</a></li>
     <li><a href="view_trending.php">Trending</a></li>
+    <li><a href="view_offers.php">Offers</a></li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
             <li>

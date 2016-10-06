@@ -1,64 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>e33 Home</title>
-    <!-- CSS -->
-    <!--<link rel="stylesheet" href="css/materialize.min.css">-->
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:500"
-          rel="stylesheet">
-    <!--<link rel='stylesheet' href='https://cse.google.com/style/look/default.css' type='text/css'/>-->
-    <!-- JavaScript for google search -->
-    <script src='//www.google.com/jsapi' type='text/javascript'></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="js/materialize.min.js"></script>
-    <script src="js/scripts.js"></script>
-</head>
-<body>
+<?php include 'head.php'; ?>
 <div class="content cell">
-    <div class="side-menu-list">
-        <ul id="slide-out" class="side-nav">
-            <li class="center-align"><img src="res/logo.gif" width="150px" id="logo"/></li>
-            <li><a href="#!">First Sidebar Link</a></li>
-            <li><a href="#!">Second Sidebar Link</a></li>
-            <li class="no-padding">
-                <ul class="collapsible">
-                    <li>
-                        <a class="collapsible-header">Dropdown<i class="material-icons">arrow_drop_down</i></a>
-                        <div class="collapsible-body">
-                            <ul>
-                                <li><a href="#!">First</a></li>
-                                <li><a href="#!">Second</a></li>
-                                <li><a href="#!">Third</a></li>
-                                <li><a href="#!">Fourth</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    <div class="row header cell">
-        <div class="col s2 m1 menu-button-column">
-            <div class="menu-button"><a href="#" data-activates="slide-out" class="button-collapse">
-                    <i class="material-icons" style="color:white;">menu</i></a>
-            </div>
-        </div>
-        <div class="col m3 hide-on-small-only"></div>
-        <div class="col s8 m4 logo-button-column center-align">
-            <img src="res/logo.gif" width="150px" id="logo" class=""/>
-        </div>
-        <div class="col s12 m4 center-align social-column">
-            Test something
-        </div>
-    </div>
     <div class="row page-content">
         <div class="col s12 m8 l6 push-l3 cell middle-wrap">
             <div class="search-area">
-                Search major eCommerce sites in one place...
+                <div class="col s12 center">
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i
+                            class="material-icons right">shopping_cart</i> List of 50+ eCom Sites</a>
+
+                    <!--<div class="card-panel teal center-align">
+                        <span class="white-text">Search</span>
+                            <a class="waves-effect waves-light btn"><i class="material-icons right">shopping_cart</i> 50+ eCom Sites</a>
+                            <span class="white-text">across India</span>
+                    </div>-->
+                </div>
                 <table>
                     <tr>
                         <td style="width: 50px;">
@@ -134,81 +88,112 @@
         </div>
         <div class="col s12 m4 l3 pull-l6 left-sidebar">
             <div class="sidebar widget cell">
-                <div class="widget-title widget2">Trending Products</div>
+                <div class="widget-title widget2">Trending...</div>
                 <div class="widget-info">
-                    <ul>
-                        <li>Moto E3</li>
-                        <li>iPhone 7</li>
-                        <li>Mac i3</li>
-                        <li>Jio Sim</li>
-                        <li>Lightning Charger</li>
-                        <li>Super car</li>
-                        <li>Bike</li>
-                        <li>Cycle</li>
-                        <li>Candle Holder</li>
-                        <li>Water Proof Note pad</li>
-                    </ul>
+                    <?php include 'web/view_trending.php'; ?>
                 </div>
             </div>
-            <div class="sidebar widget cell">
-                <div class="widget-title widget3">test wid</div>
-                <div class="widget-info">
+            <!--           <div class="sidebar widget cell">
+                           <div class="widget-title widget3">test wid</div>
+                           <div class="widget-info">
 
-                </div>
-            </div>
+                           </div>
+                       </div>-->
         </div>
         <div class="col s12 m4 l3 right-sidebar">
             <div class="sidebar widget cell">
-                <div class="widget-title widget3">Deal Breakers</div>
+                <div class="widget-title widget3">Offers & Discounts</div>
                 <div class="widget-info">
-                    <ul>
-                        <li>5% Cash back on Mobikwik</li>
-                        <li>3% offer for Moto E - SBI Credit Card</li>
-                        <li>23% off TVs</li>
-                        <li>43% off on Refurbished Phones</li>
-                        <li>iPhone 7 Pre order</li>
-                        <li>Free VR Headsed w/ Lenovo K5</li>
-                        <li>Exchange Offer @ Myntra</li>
-                        <li>Moto X 3rd Gen - Price Fall</li>
-                        <li>Redmi 3s Next Stock Date</li>
-                        <li>Whatever</li>
-                    </ul>
+                    <?php include 'web/view_offer_list.php'; ?>
                 </div>
             </div>
         </div>
     </div>
-    <div class="row footer">
-        <div class="col s12 l4 center-align">
-            <div class="widget cell">
-                <div class="widget-title widget4">Footer 1</div>
-                <div class="widget-info">
-                    <ul>
-                        <li>Tip Us</li>
-                        <li>Test link 1</li>
-                        <li>Join Us</li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col s12 l4 center-align">
-            <div class="widget cell">
-                <div class="widget-title widget5">Footer 1</div>
-                <div class="widget-info"></div>
-            </div>
-        </div>
-        <div class="col s12 l4 center-align">
-            <div class="widget cell">
-                <div class="widget-title widget6">Footer 1</div>
-                <div class="widget-info"></div>
-            </div>
-        </div>
-    </div>
+    <!-- <div class="row footer">
+         <div class="col s12 l4 center-align">
+             <div class="widget cell">
+                 <div class="widget-title widget4">Footer 1</div>
+                 <div class="widget-info">
+                     <ul>
+                         <li>Tip Us</li>
+                         <li>Test link 1</li>
+                         <li>Join Us</li>
+                         <li></li>
+                         <li></li>
+                     </ul>
+                 </div>
+             </div>
+         </div>
+         <div class="col s12 l4 center-align">
+             <div class="widget cell">
+                 <div class="widget-title widget5">Footer 1</div>
+                 <div class="widget-info"></div>
+             </div>
+         </div>
+         <div class="col s12 l4 center-align">
+             <div class="widget cell">
+                 <div class="widget-title widget6">Footer 1</div>
+                 <div class="widget-info"></div>
+             </div>
+         </div>
+     </div>-->
     <div class="col s12 m12 l12 bar-menu cell center-align">
         &copy; e33 Promotions - powered by alvistor
     </div>
 </div>
 
+<div id="users"><!--    class 'users' to activate the list.js -->
+    <div id="modal1" class="modal bottom-sheet modal-fixed-footer">
+        <div class="modal-content">
+            <div class="row">
+                <div class="col s1 m2"></div>
+                <div class="col s10 m8">
+                    <div id="sites">
+                        <!--                <input class="search" placeholder="Search" />-->
+                        <button class="sort" data-sort="site">Sort by site</button>
+                        <!--                <button class="sort" data-sort="category">Sort by category</button>-->
+
+                        <ul class="list"><!--class 'list' to notify list.js to search-->
+                            <li>
+                                <h5 class="site"><a href="http://e33.in/?flipkart.com">flipkart</a></h5>
+                                <p class="category truncate">Electronics, fashion, furniture, home, decor,
+                                    stationary</p>
+                            </li>
+                            <li>
+                                <h5 class="site"><a href="http://e33.in/?amazon.in">amazon</a></h5>
+                                <p class="category truncate">truncated text, Books, Computers, Peripherals, cables,
+                                    smartphones, accessories, men, women, tv, electronics</p>
+                            </li>
+                            <li>
+                                <h5 class="site"><a href="http://e33.in/?snapdeal.com">snapdeal</a></h5>
+                                <p class="category">few, very, something</p>
+                            </li>
+                            <li>
+                                <h5 class="site"><a href="http://e33.in/?shopclues.com">shopclues</a></h5>
+                                <p class="category">printing</p>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer center-align blue darken-3s">
+            <!--<a href="#!" class="modal-action modal-close waves-effect waves-green btn center-align">Close</a>-->
+            <!--        <div class="left btn">Filter:</div>-->
+            <div style="width: 80%; margin-left: 10%;">
+                <input class="search" placeholder="eg: fashion, phone"/><!--class 'search' is to notify list.js-->
+            </div>
+            <!--        <div class="sort waves-effect waves-green btn center-align" data-sort="name">Sort by Name</div>-->
+        </div>
+    </div>
+</div>
+<script>
+    var options_for_site_list = {
+        valueNames: ['site', 'category']
+    };
+
+    var siteList = new List('users', options_for_site_list);
+</script>
 </body>
 </html>

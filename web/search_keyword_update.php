@@ -12,13 +12,13 @@ $query = "SELECT * FROM search WHERE search_keyword = '$keyword'";
 $result = mysqli_query($conn, $query);
 
 $mysqltime = date("Y-m-d H:i:s");
-echo $mysqltime;
+//echo $mysqltime;
 if (mysqli_num_rows($result) > 0) {
-    echo "working";
+//    echo "working";
     $query = "UPDATE search set no_of_times = no_of_times + 1, datentime = '$mysqltime' where search_keyword = '$keyword'";
     $result = mysqli_query($conn, $query);
 } else {
-    $query = "insert into search (search_keyword, no_of_times, datentime) values ('$keyword', 1, '$mysqltime')";
+    $query = "insert into search (search_keyword, no_of_times, datentime) VALUES ('$keyword', 1, '$mysqltime')";
     $result = mysqli_query($conn, $query);
 }
 

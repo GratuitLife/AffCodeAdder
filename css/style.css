@@ -2,7 +2,7 @@
 /* Variable Declaration */
 :root {
     --back-color: #eeeeee;
-    --primary-color: #2196F3;
+    --primary-color: #4bb5f3;
     --secondary-color: #c0392b;
     --widget1-color: #F44336;
     --widget2-color: #E91E63;
@@ -82,6 +82,10 @@
     min-height: 500px;
 }
 
+.search-area td {
+    padding: 2px 2px 5px 3px !important;
+}
+
 .result-area {
     /*min-height: 300px;*/
     clear: both;
@@ -146,12 +150,13 @@
 }
 /*header ends*/
 /*sidebar start*/
-.sidebar .widget-info li {
-    transition: margin-left 300ms ease;
+.sidebar .widget-info {
+    /*transition: margin-left 300ms ease;*/
 }
-.sidebar .widget-info li:hover {
-    margin-left: 10px;
-    color: #00C853;
+
+.sidebar .widget-info {
+    /*margin-left: 10px;*/
+    /*color: #00C853;*/
 }
 /*sidebar end*/
 /*footer starts*/
@@ -183,7 +188,7 @@
     margin-top: 3px;
 }
 
-/*Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:500*/
+/*Roboto+Condensed:300,300i,400,400i,500,700,700i|Roboto:500*/
 .widget-title {
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 700;
@@ -194,9 +199,13 @@
 
 .widget-info {
     font-family: "Roboto Condensed", sans-serif;
-    font-weight: 400;
-    font-size: 1.1em;
-    padding: 10px;
+    font-weight: 500;
+    font-size: 100%;
+    /*padding: 5px;*/
+}
+
+.widget-info span {
+    font-size: 100%;
 }
 
 .widget1 {
@@ -230,6 +239,11 @@
 }
 
 /*widget ends*/
+
+/* Overriding the materialize css */
+.modal.bottom-sheet {
+    max-height: 80% !important;
+}
 .clear {
     float: none !important;
 }

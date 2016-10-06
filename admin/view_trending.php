@@ -17,8 +17,8 @@ $query = "select * from trend";
 $result = mysqli_query($conn, $query);
 ?>
     <div class="row">
-        <div class="col s3"></div>
-        <div class="col s6 center-align">
+        <div class="col s1"></div>
+        <div class="col s10 center-align">
             <div class="card-panel red lighten-2">Update the edited row Before editing next one</div>
         </div>
     </div>
