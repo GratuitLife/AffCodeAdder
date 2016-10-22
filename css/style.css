@@ -25,6 +25,9 @@
     margin: 0 0 0 0 !important;
 }
 
+.gsc-input input {
+    border: 1px ridge #cccccc !important;
+}
 .gsc-clear-button {
     /*display: none;*/
 }
@@ -100,19 +103,19 @@
 
 .mid-ads {
     z-index: 5;
-    height: 280px;
-    border: solid red 1px;
+    height: auto;
+    /*border: solid red 1px;*/
     width: 100%;
     top: 20px;
     margin-bottom: 20px;
-    position: absolute;
+    position: relative;
 }
 
 .top-query {
     transition: max-height 300ms ease;
     max-height: 1px;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     z-index: 101;
     width: 100%;
     left: 0;
@@ -240,6 +243,44 @@
 
 /*widget ends*/
 
+/*site list */
+.close-button {
+    right: 20px;
+    margin-top: 5px;
+    position: absolute;
+}
+
+.list-title {
+    width: 100%;
+    height: 52px;
+    background-color: white;
+    border: solid 1px yellowgreen;
+    border-radius: 5px;
+}
+
+.list-title a {
+    /*padding-left: 110px;*/
+    line-height: 50px;
+    color: coral;
+}
+
+.name {
+    float: left;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.list-title i {
+    float: left;
+    margin-left: 5px;
+}
+
+.category {
+    clear: both;
+    margin-top: 5px;
+}
+
+/*site list ends*/
 /* Overriding the materialize css */
 .modal.bottom-sheet {
     max-height: 80% !important;

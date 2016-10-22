@@ -9,9 +9,7 @@ include(__DIR__ . '/../config.php');
 
 $query = "select * from trend";
 $result = mysqli_query($conn, $query);
-?>
-    <div class="collection">
-        <?php while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
             if ($row['title']) {
                 ?>
                 <a href="<?php echo "http://e33.in/?" . $row['link']; ?>" target="_blank"
@@ -19,6 +17,5 @@ $result = mysqli_query($conn, $query);
                                                                                       data-badge-caption="">new</span></a>
             <?php }
         } ?>
-    </div>
 <?php
 mysqli_close($conn);

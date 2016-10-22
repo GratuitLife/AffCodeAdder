@@ -1,0 +1,58 @@
+.site {
+    background-image: url("../res/spritesheet.png");
+    background-repeat: no-repeat;
+}
+
+.site-amazon {
+    width: 100px;
+    height: 50px;
+    background-position: -5px -5px;
+}
+
+.site-ebay {
+    width: 100px;
+    height: 50px;
+    background-position: -115px -5px;
+}
+
+.site-flipkart {
+    width: 100px;
+    height: 50px;
+    background-position: -5px -65px;
+}
+
+.site-freecharge {
+    width: 100px;
+    height: 50px;
+    background-position: -115px -65px;
+}
+
+.site-jabong {
+    width: 97px;
+    height: 48px;
+    background-position: -5px -125px;
+}
+
+.site-mobikwik {
+    width: 100px;
+    height: 50px;
+    background-position: -112px -125px;
+}
+
+.site-paytm {
+    width: 97px;
+    height: 48px;
+    background-position: -5px -185px;
+}
+
+.site-shopclues {
+    width: 100px;
+    height: 50px;
+    background-position: -112px -185px;
+}
+
+.site-snapdeal {
+    width: 100px;
+    height: 50px;
+    background-position: -225px -5px;
+}

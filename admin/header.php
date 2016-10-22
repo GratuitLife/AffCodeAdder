@@ -27,6 +27,7 @@ if (!$_SESSION['user']) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="../js/materialize.min.js"></script>
     <script src="../js/datetimepicker.min.js"></script>
+    <script src="../js/jquery.tabledit.min.js"></script>
     <script src="../js/scripts.js"></script>
     <link href="../css/datetimepicker.css" rel="stylesheet">
 </head>
@@ -36,6 +37,20 @@ if (!$_SESSION['user']) {
     <li><a href="index.php">Dashboard</a></li>
     <li><a href="view_trending.php">Trending</a></li>
     <li><a href="view_offers.php">Offers</a></li>
+    <li><a href="view_search_update.php">Search</a></li>
+    <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+            <li>
+                <a class="collapsible-header">Sites<i class="material-icons">arrow_drop_down</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="view_sites.php">Edit Sites</a></li>
+                        <li><a href="view_sites_add.php">Add Site</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </li>
     <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
             <li>

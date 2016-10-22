@@ -1,12 +1,17 @@
 <?php include 'head.php'; ?>
 <div class="content cell">
     <div class="row page-content">
-        <div class="col s12 m8 l6 push-l3 cell middle-wrap">
+        <div class="col s12 m7 l6 push-l3 cell middle-wrap">
             <div class="search-area">
                 <div class="col s12 center">
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i
-                            class="material-icons right">shopping_cart</i> List of 50+ eCom Sites</a>
-
+                    <!--                    <a id="top-query-button" class="btn waves-effect waves-light orange accent-4">-->
+                    <!--                        <i class="material-icons left">arrow_drop_down</i>See Most Searched Products<i class="material-icons right">search</i>-->
+                    <!--                    </a>-->
+                    <a href="#modal1" id="list-of-sites-button"
+                       class="waves-effect waves-light btn blue accent-3 modal-trigger">
+                        <i class="material-icons left">arrow_drop_down</i>See List of 50+ eCom Sites<i
+                            class="material-icons right">shopping_cart</i>
+                    </a>
                     <!--<div class="card-panel teal center-align">
                         <span class="white-text">Search</span>
                             <a class="waves-effect waves-light btn"><i class="material-icons right">shopping_cart</i> 50+ eCom Sites</a>
@@ -15,11 +20,11 @@
                 </div>
                 <table>
                     <tr>
-                        <td style="width: 50px;">
-                            <a class="btn-floating btn-large waves-effect waves-light red tooltipped"
-                               data-position="right" data-delay="50" data-tooltip="Top Search Queries by Users"
-                               id="top-query-button">
-                                <i class="material-icons">filter_list</i>
+                        <td style="width: 60px;">
+                            <a id="tour-init-button"
+                               class="btn-large btn-floating red waves-effect waves-light tooltipped"
+                               data-position="right" data-delay="50" data-tooltip="Take a Tour">
+                                <i class="material-icons left">lightbulb_outline</i>
                             </a>
                         </td>
                         <td style="width: auto;">
@@ -45,8 +50,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <script src='http://www.google.com/jsapi' type='text/javascript'></script>
                 <script type='text/javascript'>
                     google.load('search', '1', {language: 'en', style: google.loader.themes.DEFAULT});
@@ -62,6 +65,12 @@
                         customSearchControl.draw('cse', options);
                     }, true);
                 </script>
+                <div class="col s12 center">
+                    <a id="top-query-button" class="btn waves-effect waves-light orange accent-4">
+                        <i class="material-icons left">arrow_drop_down</i>See Most Searched Products<i
+                            class="material-icons right">search</i>
+                    </a>
+                </div>
                 <div class="top-query cell">
                     <div class="collection query-list">
                         <?php include 'web/view_top_query.php'; ?>
@@ -83,14 +92,16 @@
                         <!--</div>-->
                     </div>
                 </div>
-                <div class="something" style="position: relative;"></div>
+                <!--                <div class="something" style="position: relative;"></div>-->
             </div>
         </div>
-        <div class="col s12 m4 l3 pull-l6 left-sidebar">
+        <div class="col s12 m5 l3 pull-l6 left-sidebar">
             <div class="sidebar widget cell">
                 <div class="widget-title widget2">Trending...</div>
                 <div class="widget-info">
+                    <div id="trending_list" class="collection">
                     <?php include 'web/view_trending.php'; ?>
+                    </div>
                 </div>
             </div>
             <!--           <div class="sidebar widget cell">
@@ -100,11 +111,13 @@
                            </div>
                        </div>-->
         </div>
-        <div class="col s12 m4 l3 right-sidebar">
+        <div class="col s12 m5 l3 right-sidebar">
             <div class="sidebar widget cell">
                 <div class="widget-title widget3">Offers & Discounts</div>
                 <div class="widget-info">
+                    <div id="offer_list" class="collection">
                     <?php include 'web/view_offer_list.php'; ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -142,37 +155,19 @@
     </div>
 </div>
 
-<div id="users"><!--    class 'users' to activate the list.js -->
+<div id="site-list"><!--    id 'site-list' to activate the list.js -->
     <div id="modal1" class="modal bottom-sheet modal-fixed-footer">
         <div class="modal-content">
             <div class="row">
-                <div class="col s1 m2"></div>
-                <div class="col s10 m8">
+                <div class="col hide-on-small-only m2"></div>
+                <div class="col s12 m8">
                     <div id="sites">
                         <!--                <input class="search" placeholder="Search" />-->
-                        <button class="sort" data-sort="site">Sort by site</button>
+                        <button class="sort" data-sort="list-title">Sort by site</button>
                         <!--                <button class="sort" data-sort="category">Sort by category</button>-->
-
-                        <ul class="list"><!--class 'list' to notify list.js to search-->
-                            <li>
-                                <h5 class="site"><a href="http://e33.in/?flipkart.com">flipkart</a></h5>
-                                <p class="category truncate">Electronics, fashion, furniture, home, decor,
-                                    stationary</p>
-                            </li>
-                            <li>
-                                <h5 class="site"><a href="http://e33.in/?amazon.in">amazon</a></h5>
-                                <p class="category truncate">truncated text, Books, Computers, Peripherals, cables,
-                                    smartphones, accessories, men, women, tv, electronics</p>
-                            </li>
-                            <li>
-                                <h5 class="site"><a href="http://e33.in/?snapdeal.com">snapdeal</a></h5>
-                                <p class="category">few, very, something</p>
-                            </li>
-                            <li>
-                                <h5 class="site"><a href="http://e33.in/?shopclues.com">shopclues</a></h5>
-                                <p class="category">printing</p>
-                            </li>
-                        </ul>
+                        <a class="modal-action modal-close close-button btn green waves-effect center-align black-text"><i
+                                class="material-icons">close</i></a>
+                        <?php include 'web/view_siteList.php'; ?>
 
                     </div>
                 </div>
@@ -181,8 +176,9 @@
         <div class="modal-footer center-align blue darken-3s">
             <!--<a href="#!" class="modal-action modal-close waves-effect waves-green btn center-align">Close</a>-->
             <!--        <div class="left btn">Filter:</div>-->
-            <div style="width: 80%; margin-left: 10%;">
-                <input class="search" placeholder="eg: fashion, phone"/><!--class 'search' is to notify list.js-->
+            <div style="width: 70%; float:left; margin-left: 15%;">
+                <input class="search" placeholder="type to filter sites [eg: fashion, phone]"/>
+                <!--class 'search' is to notify list.js-->
             </div>
             <!--        <div class="sort waves-effect waves-green btn center-align" data-sort="name">Sort by Name</div>-->
         </div>
@@ -190,10 +186,37 @@
 </div>
 <script>
     var options_for_site_list = {
-        valueNames: ['site', 'category']
+        valueNames: ['list-title', 'category']
+//        plugins: [ ListFuzzySearch() ]
     };
 
-    var siteList = new List('users', options_for_site_list);
+    var siteList = new List('site-list', options_for_site_list);
+
+    $('#tour-init-button').on('click', function (e) {
+        boneVojage([
+                {
+                    selector: '#top-query-button',
+                    text: 'Top 10 searches by users... See what others are interested to buy today..'
+                },
+                {
+                    selector: '#list-of-sites-button',
+                    text: 'Here is the list of 50+ eCommerce sites with filter..'
+                },
+                {
+                    selector: '#cse-search-form',
+                    text: 'Type your product name here! We search through 50+ sites for it :)'
+                },
+                {
+                    selector: '.menu-button',
+                    text: 'Menu Button.. For More Pages'
+                }
+            ], {
+                delay: 200
+            }
+        );
+
+        e.preventDefault();
+    });
 </script>
 </body>
 </html>

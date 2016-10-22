@@ -6,12 +6,10 @@
  * Time: 01:29 PM
  */
 include(__DIR__ . '/../config.php');
-
-$query = "select * from offers ORDER by id desc limit 10";
+$now = date("Y-m-d H:i:s");
+$query = "select * from offers where end_datentime > '$now' ORDER by id DESC LIMIT 10";
 $result = mysqli_query($conn, $query);
-?>
-    <div class="collection">
-        <?php while ($row = mysqli_fetch_assoc($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
             if ($row['title']) {
                 $time = new DateTime($row['end_datentime']);
                 $now = date("Y-m-d H:i:s");
@@ -32,6 +30,5 @@ $result = mysqli_query($conn, $query);
             <?php }
         } ?>
         <a href="../offer.php" class="collection-item">Click Here for<span class="badge new red" data-badge-caption="">More Offers With More Details</span></a>
-    </div>
 <?php
 mysqli_close($conn);

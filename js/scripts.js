@@ -1,8 +1,19 @@
 // code for Google CSE by Google
 $(function () {
-    setTimeout(function () {
+    if ($('#cse-search-form').length) {
+        var placeholder1 = setInterval(function () {
+            if (document.getElementById("gsc-i-id1").hasAttribute("placeholder")) {
+                clearInterval(placeholder1);
+            }
         document.getElementById("gsc-i-id1").setAttribute("placeholder", "To Search... Type and hit enter");
-    }, 2000);
+        }, 1000);
+    }
+    /*    $( window ).hashchange(function() {
+     if(location.hash.substr(1) == "closesitelist") {
+     alert(location.hash.substr(1));
+     $('#modal1').closeModal();
+     }
+     });*/
     // code for sideNav menu
     // Initialize collapse button
     $(".button-collapse").sideNav({
@@ -32,13 +43,12 @@ $(function () {
         $('.top-query').toggleClass('top-query-active');
     });
     $(".query-list-item").click(function (e) {
-        $('.top-query').toggleClass('top-query-active');
+        $('.top-query').removeClass('top-query-active');
         var query_content = $($(this).contents().get(0)).text();
         // alert(query);
         document.getElementById("gsc-i-id1").value = query_content;
         $(".gsc-search-button").trigger("click");
     });
-
 });
 
 // code for prefixing all search result link with e33.in?
